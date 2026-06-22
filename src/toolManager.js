@@ -1,6 +1,8 @@
 import { DrawingTool } from "./tools/drawingTool.js";
 import { TextTool } from "./tools/textTool.js";
 import { EraserTool } from "./tools/eraserTool.js";
+import { RectangleTool } from "./tools/rectangleTool.js";
+import { OvalTool } from "./tools/ovalTool.js";
 
 export class ToolManager {
   constructor(canvas) {
@@ -11,12 +13,16 @@ export class ToolManager {
       draw: new DrawingTool(canvas),
       text: new TextTool(canvas),
       eraser: new EraserTool(canvas),
+      rectangle: new RectangleTool(canvas),
+      oval: new OvalTool(canvas),
     };
 
     this.toolDefinitions = [
       { id: "draw", name: "Draw", icon: "✏️" },
       { id: "text", name: "Text", icon: "T" },
       { id: "eraser", name: "Eraser", icon: "🗑️" },
+      { id: "rectangle", name: "Rectangle", icon: "▭" },
+      { id: "oval", name: "Oval", icon: "⬭" },
     ];
 
     this.selectTool("draw");
